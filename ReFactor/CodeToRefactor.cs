@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace CodingAssessment.Refactor
 {
@@ -45,16 +46,9 @@ namespace CodingAssessment.Refactor
                 try
                 {
                     // Creates a dandon Name
-                    string name = string.Empty;
-                    var random = new Random();
-                    if (random.Next(0, 1) == 0) {
-                        name = "Bob";
-                    }
-                    else {
-                        name = "Betty";
-                    }
+                    var name = GetName();
                     // Adds new people to the list
-                    _people.Add(new People(name, DateTime.UtcNow.Subtract(new TimeSpan(random.Next(18, 85) * 356, 0, 0, 0))));
+                    _people.Add(new People(name, DateTime.UtcNow.Subtract(new TimeSpan(new Random().Next(18, 85) * 356, 0, 0, 0))));
                 }
                 catch (Exception e)
                 {
@@ -72,14 +66,32 @@ namespace CodingAssessment.Refactor
 
         public string GetMarried(People p, string lastName)
         {
-            if (lastName.Contains("test"))
-                return p.Name;
-            if ((p.Name.Length + lastName).Length > 255)
+            if (lastName.Contains("test") || string.IsNullOrEmpty(lastName))
+                return p.Name.Substring(0, p.Name.Length > 255 ? 255 : p.Name.Length);
+
+            var fullName = string.Concat(p.Name, lastName);
+            if (fullName.Length > 255)
             {
-                (p.Name + " " + lastName).Substring(0, 255);
+                return (p.Name + " " + lastName).Substring(0, 255);
             }
 
+            
             return p.Name + " " + lastName;
+        }
+
+        private string GetName()
+        {
+            var name = string.Empty;
+            var random = new Random();
+            if (random.Next(0, 1) == 0)
+            {
+                name = "Bob";
+            }
+            else
+            {
+                name = "Betty";
+            }
+            return name;
         }
     }
 }
