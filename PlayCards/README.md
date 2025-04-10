@@ -16,7 +16,12 @@
 		|		|	|--Suit.cs
 		|		|	|--Card.cs
 		|		|
-		|		|--Class1.cs
+		|		|--Services
+		|		|	|
+		|		|	|--IShuffleService.cs
+		|		|	|--SuffleService.cs
+		|		|
+		|		|--Deck.cs
 		|
 		|--PlayCards.Core.Tests
 				|
