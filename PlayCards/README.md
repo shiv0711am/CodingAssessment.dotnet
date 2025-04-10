@@ -10,6 +10,11 @@
 		|
 		|--PlayCards.Core/
 		|		|
+		|		|--Models
+		|		|	|
+		|		|	|--Rank.cs
+		|		|	|--Suit.cs
+		|		|
 		|		|--Class1.cs
 		|
 		|--PlayCards.Core.Tests
