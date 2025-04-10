@@ -25,4 +25,4 @@
 		|
 		|--PlayCards.Core.Tests
 				|
-				|--UnitTest1.cs
+				|--DeckTests.cs
