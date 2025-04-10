@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace CodingAssessment.Refactor
 {
+    //Also we can move the class People and BirthingUnit to 2 separate physical files with file name being same as class name.
+    //I have not moved the classes in separate files to ease the review process.
     public class People
     {
         //Under16 field can be removed as it is not used anywhere apart from the constructor which can also be removed.
