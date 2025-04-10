@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30404.54
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReFactor", "ReFactor\ReFactor.csproj", "{B6AF98D7-C68C-4960-963C-D2970F45DE8F}"
 EndProject
@@ -14,6 +14,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CodeToReview.cs = CodeToReview.cs
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PlayCards", "PlayCards", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayCards.Core", "PlayCards\PlayCards.Core\PlayCards.Core.csproj", "{8F5D7E74-AC61-4A88-8E7D-DAD001A2C195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayCards.Core.Tests", "PlayCards\PlayCards.Core.Tests\PlayCards.Core.Tests.csproj", "{C22D05AD-791B-43F5-AADE-3DB21223AC84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayCards.Console", "PlayCards\PlayCards.Console\PlayCards.Console.csproj", "{88C93CDD-318A-4D89-8141-C2D24977C192}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,9 +37,26 @@ Global
 		{3737666C-6FB0-4DFC-8D96-A518AAF245EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3737666C-6FB0-4DFC-8D96-A518AAF245EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3737666C-6FB0-4DFC-8D96-A518AAF245EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5D7E74-AC61-4A88-8E7D-DAD001A2C195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5D7E74-AC61-4A88-8E7D-DAD001A2C195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5D7E74-AC61-4A88-8E7D-DAD001A2C195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5D7E74-AC61-4A88-8E7D-DAD001A2C195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C22D05AD-791B-43F5-AADE-3DB21223AC84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C22D05AD-791B-43F5-AADE-3DB21223AC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C22D05AD-791B-43F5-AADE-3DB21223AC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C22D05AD-791B-43F5-AADE-3DB21223AC84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C93CDD-318A-4D89-8141-C2D24977C192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C93CDD-318A-4D89-8141-C2D24977C192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C93CDD-318A-4D89-8141-C2D24977C192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C93CDD-318A-4D89-8141-C2D24977C192}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F5D7E74-AC61-4A88-8E7D-DAD001A2C195} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C22D05AD-791B-43F5-AADE-3DB21223AC84} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{88C93CDD-318A-4D89-8141-C2D24977C192} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C2116AA9-AF5F-4EBF-A96B-4858E89954B2}
