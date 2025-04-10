@@ -14,6 +14,7 @@
 		|		|	|
 		|		|	|--Rank.cs
 		|		|	|--Suit.cs
+		|		|	|--Card.cs
 		|		|
 		|		|--Class1.cs
 		|
