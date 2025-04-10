@@ -5,13 +5,16 @@ namespace CodingAssessment.Refactor
 {
     public class People
     {
-        private static readonly DateTimeOffset Under16 = DateTimeOffset.UtcNow.AddYears(-15);
+        //Under16 field can be removed as it is not used anywhere apart from the constructor which can also be removed.
+        //Commenting it and not removing it for code review purpose.
+        //private static readonly DateTimeOffset Under16 = DateTimeOffset.UtcNow.AddYears(-15);
         public string Name { get; private set; }
         public DateTimeOffset DOB { get; private set; }
 
-        public People(string name) : this(name, Under16.Date)
-        {
-        }
+        //Removing the unused code.
+        //public People(string name) : this(name, Under16.Date)
+        //{
+        //}
 
         public People(string name, DateTime dob)
         {
