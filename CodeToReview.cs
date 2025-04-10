@@ -72,6 +72,7 @@ namespace Utility.Valocity.ProfileHelper
             return _people;
         }
 
+        //This unused method can be removed.
         private IEnumerable<People> GetBobs(bool olderThan30)
         {
             //x.Name == "Bob" can be written as x.Name.Equals("Bob", StringComparison.InvariantCultureIgnoreCase)
@@ -84,6 +85,7 @@ namespace Utility.Valocity.ProfileHelper
                 return p.Name;
 
             // the entire condition can be re-written as 'return (p.Name + " " + lastName).Substring(0, 255);'
+            // and if condition should be corrected to p.Name.Length + lastName.Length > 255
             if ((p.Name.Length + lastName).Length > 255)
             {
                 (p.Name + " " + lastName).Substring(0, 255);
