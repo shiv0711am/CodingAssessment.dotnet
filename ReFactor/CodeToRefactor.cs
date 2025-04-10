@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Xml.Linq;
 
 namespace CodingAssessment.Refactor
 {
@@ -27,7 +25,7 @@ namespace CodingAssessment.Refactor
         /// <summary>
         /// MaxItemsToRetrieve
         /// </summary>
-        private List<People> _people;
+        private readonly List<People> _people;
 
         public BirthingUnit()
         {
@@ -39,13 +37,13 @@ namespace CodingAssessment.Refactor
         /// </summary>
         /// <param name="j"></param>
         /// <returns>List<object></returns>
-        public List<People> GetPeople(int i)
+        public List<People> GetPeople(int numberOfPeople)
         {
-            for (int j = 0; j < i; j++)
+            for (int j = 0; j < numberOfPeople; j++)
             {
                 try
                 {
-                    // Creates a dandon Name
+                    // Creates a random Name
                     var name = GetName();
                     // Adds new people to the list
                     _people.Add(new People(name, DateTime.UtcNow.Subtract(new TimeSpan(new Random().Next(18, 85) * 356, 0, 0, 0))));
@@ -53,16 +51,17 @@ namespace CodingAssessment.Refactor
                 catch (Exception e)
                 {
                     // Dont think this should ever happen
-                    throw new Exception("Something failed in user creation");
+                    throw new Exception("Something failed in user creation", e);
                 }
             }
             return _people;
         }
 
-        private IEnumerable<People> GetBobs(bool olderThan30)
-        {
-            return olderThan30 ? _people.Where(x => x.Name == "Bob" && x.DOB >= DateTime.Now.Subtract(new TimeSpan(30 * 356, 0, 0, 0))) : _people.Where(x => x.Name == "Bob");
-        }
+        //This method should be removed as it is not used in the code but commenting this method for review purpose.
+        //private IEnumerable<People> GetBobs(bool olderThan30)
+        //{
+        //    return olderThan30 ? _people.Where(x => x.Name == "Bob" && x.DOB >= DateTime.Now.Subtract(new TimeSpan(30 * 356, 0, 0, 0))) : _people.Where(x => x.Name == "Bob");
+        //}
 
         public string GetMarried(People p, string lastName)
         {

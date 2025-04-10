@@ -56,5 +56,20 @@ namespace Tests
             var name = _sut.GetMarried(people, "Nolan");
             name.Should().Be("Chris Nolan");
         }
+
+
+        [Fact]
+        public void GetPeople_WhenInputIsZero()
+        {
+            var result = _sut.GetPeople(0);
+            result.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void GetPeople_WhenInputIsNonZero()
+        {
+            var result = _sut.GetPeople(2);
+            result.Count.Should().Be(2);
+        }
     }
 }
